@@ -1,4 +1,5 @@
 import { navActive } from './navMenu.js'
+import { changeBackground } from './background.js'
 
 export class Router {
   routes = {}
@@ -23,6 +24,7 @@ export class Router {
     .then((data) => data.text())
     .then(html => {
       navActive()
+      changeBackground()
       document.querySelector('#app').innerHTML = html
     })
   }
